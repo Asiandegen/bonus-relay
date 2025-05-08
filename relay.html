@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Stake Bonus Code Relay</title></head>
+<body>
+<script>
+    window.addEventListener("message", (event) => {
+        if (event.data?.type === "stake_code" && typeof event.data.code === "string") {
+            parent.postMessage(event.data, "*");
+        }
+    });
+</script>
+</body>
+</html>
